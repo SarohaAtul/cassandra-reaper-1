@@ -44,7 +44,7 @@ public class RepairScheduleStatusMapper implements ResultSetMapper<RepairSchedul
         r.getDouble("intensity"),
         r.getBoolean("incremental_repair"),
         r.getInt("segment_count"),
-        RepairParallelism.valueOf(r.getString("repair_parallelism")),
+        RepairParallelism.fromName(r.getString("repair_parallelism")),
         r.getInt("days_between")
     );
   }

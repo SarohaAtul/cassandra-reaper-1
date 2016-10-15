@@ -32,7 +32,7 @@ public class RepairParametersMapper implements ResultSetMapper<RepairParameters>
                                     r.getBigDecimal("end_token").toBigInteger());
     String[] columnFamilies = (String[]) r.getArray("column_families").getArray();
     RepairParallelism repairParallelism =
-        RepairParallelism.valueOf(r.getString("repair_parallelism"));
+        RepairParallelism.fromName(r.getString("repair_parallelism"));
     return new RepairParameters(range,
                                 r.getString("keyspace_name"),
                                 Sets.newHashSet(columnFamilies),

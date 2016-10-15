@@ -197,7 +197,7 @@ public class ReaperApplication extends Application<ReaperApplicationConfiguratio
   public static void checkRepairParallelismString(String givenRepairParallelism)
       throws ReaperException {
     try {
-      RepairParallelism.valueOf(givenRepairParallelism.toUpperCase());
+      RepairParallelism.fromName(givenRepairParallelism.toLowerCase());
     } catch (java.lang.IllegalArgumentException ex) {
       throw new ReaperException(
           "invalid repair parallelism given \"" + givenRepairParallelism

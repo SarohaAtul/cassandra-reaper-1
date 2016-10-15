@@ -158,7 +158,7 @@ public class RepairRunResource {
       if (repairParallelism.isPresent()) {
         LOG.debug("using given repair parallelism {} instead of configured value {}",
                   repairParallelism.get(), context.config.getRepairParallelism());
-        parallelism = RepairParallelism.valueOf(repairParallelism.get().toUpperCase());
+        parallelism = RepairParallelism.fromName(repairParallelism.get().toLowerCase());
       }
       
       if(!parallelism.equals(RepairParallelism.PARALLEL) && incrementalRepair) {
